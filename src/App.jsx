@@ -5,12 +5,12 @@ export default function App() {
 	return (
 		<>
 			<header>
-				<h1>Simple Calculator</h1>
+				<h1 className="font-sans font-bold drop-shadow-lg">
+					Simple Calculator
+				</h1>
+				<p>by sampsn</p>
 			</header>
 			<Calculator />
-			<footer>
-				<p>Created by ya boi, Gabriel Sampson</p>
-			</footer>
 		</>
 	);
 }

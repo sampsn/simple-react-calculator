@@ -1,9 +1,19 @@
+import { evaluate } from "mathjs";
+
 export default function Button({ label, updateDisplay }) {
 	const addNumbers = () => {
 		updateDisplay((prev) => {
 			if (label === "Clear") {
 				return "";
 			} else if (label === "=") {
+				const previous = prev;
+				if (prev.includes("=")) {
+					return prev;
+				} else {
+					const answer = Intl.NumberFormat("en-US").format(evaluate(prev));
+					return `${previous} = ${answer}`;
+				}
+			} else if (prev.includes("=")) {
 				return prev;
 			} else {
 				return prev + label;
@@ -15,7 +25,7 @@ export default function Button({ label, updateDisplay }) {
 
 	switch (label) {
 		case "/":
-		case "x":
+		case "*":
 		case "-":
 		case "+":
 		case "=":
