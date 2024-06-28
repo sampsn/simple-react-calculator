@@ -29,13 +29,13 @@ export default function Button({ label, updateDisplay }) {
 		case "-":
 		case "+":
 		case "=":
-			classes = "bg-zinc-800 btn";
+			classes = "bg-zinc-800 btn hover:bg-zinc-800 hover:opacity-70";
 			break;
 		case "Clear":
-			classes = "bg-orange-500 text-white btn col-span-4";
+			classes = "bg-orange-500 text-white btn col-span-4 hover:bg-orange-700";
 			break;
 		default:
-			classes = "bg-zinc-700 btn";
+			classes = "bg-zinc-700 btn hover:bg-zinc-800";
 			break;
 	}
 
